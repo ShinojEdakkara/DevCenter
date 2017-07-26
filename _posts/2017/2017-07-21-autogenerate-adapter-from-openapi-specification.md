@@ -1,6 +1,6 @@
 
 ---
-title: 'Auto Generate Adapters for Microservices and backend systems from it's OpenAPI Specification'
+title: 'Auto Generate Adapters for Microservices and backend systems from its OpenAPI Specification'
 date: 2017-07-31
 tags:
 - MobileFirst_Foundation
@@ -191,5 +191,4 @@ All the REST endpoints in the OpenAPI specification should have Consumes and Pro
 
 #### Mismatch in specification on request and response contents
 Many of the OpenAPI specification is not usually updated with the changes in the backend REST API. This can results adapter call failing due to the content mismatch. Make sure that the request and response contents in the specification matches with what is expected by the backend REST API
-
 
