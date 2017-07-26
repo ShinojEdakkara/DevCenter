@@ -26,6 +26,8 @@ The OpenAPI Specification, originally known as the Swagger Specification, is a s
 ## Auto-generation of Adapter from OpenAPI Specification
 IBM Mobile Foundation Service provides an extension Adapters that can be used to auto-generate adapters from OpenAPI specification. The extension Adapter takes an OpenAPI specification and generates the adapter from the Open API specification, using the client libaries generated from the OpenAPI specification, and downloads the generated adatpers. The adapter that is generated and downloaded can then be deployed to Mobile Foundation Server and directly be used by the client applications. This takes the pain out of developers who need to spends lot of time on developing the adapters rather they can focus more on building the client applications.
 
+**Note** : Adapter Generation Feature is available on MFP Devkits and Mobile Foundation Service only. For MFP Devkits, to use the adapter generation feature, you need to have JDK insalled on the machine where MFP is installed and **JAVA_HOME** environment varibale needs to be set to the installed JDK path.
+
 ### Microservice Connector - Extension Adapter for generating adapter from OpenAPI Specification
 IBM Mobile Foundation Service ships an Extension Adapter, called Microservice Connector, that can be download from the Download Center of MobileFirst Operations Console. This adapter needs to be downloaded and deployed on to the Mobile Foundation Server. 
 
