@@ -45,7 +45,7 @@ IBM Mobile Foundation Service ships an Extension Adapter, called Microservice Co
 The correctness of the adapter generated depends on the OpenAPI specification. There may be cases where OpenAPI specification doesn't match with that of REST API of the backend service. In this case , even if the adapter generation is successful, the call from adapter to the backend will not work because of the mismatch in  specification and the backend REST API. In the case, unless the specification is corrected, you won't get a working adapter. 
 
 #### Adding Security in OpenAPI specification
-Adapter generator support BASIC authentication only. Authentication types such as API Key and OAUTH2 is not supported. For BASIC authentication, security definition specification needs to be added to the specification json
+For Adapter to connect to backend system, security definitions should be addede to the OpenAPI specification. Adapter generator support **BASIC** authentication only. Authentication types such as **API Key** and **OAUTH2** is not supported for connecting to backend systems. For **BASIC** authentication, security definition specification needs to be added to the specification json
 
 ```
 "securityDefinitions": {
@@ -75,9 +75,9 @@ Make sure that the host with correct schemes is provided in the specification an
 
 ```
 
-### Adding Custom Scope for Adapter REST Endpoints
+#### Adding Custom Scope for Adapter REST Endpoints
 
-If there is no scope added in the OpenAPI specification, a default scope is added to all the REST endpoints. You can add custom scope either at the global level or for individual REST endpoints, here is an example of adding scope globally
+If there is no scope added in the OpenAPI specification, a **DEFAULT_SCOPE** is added to all the REST endpoints. You can add custom scope either at the global level or at the operational level, here is an example of adding scope globally
 
 ```
 "securityDefinitions": {
@@ -106,7 +106,7 @@ If there is no scope added in the OpenAPI specification, a default scope is adde
 ]
 ```
 
-Here is an example of overriding the global scope in each of the REST endpoints
+Here is an example of overriding the global scope at the operational level
 
 ```
 "paths": {
@@ -177,7 +177,7 @@ In the above example, EmptyObject don't have any properties defined and is empty
 
 #### Missing Consumes and Produces Content-types in specification
 
-All the REST endpoints in the OpenAPI specification should have Consumes and Produces Content-types. The generated adapter can fail in calling the backend service if this is not specified in the specification
+All the REST endpoints in the OpenAPI specification should have **Consumes** and **Produces** Content-types. The generated adapter can fail in calling the backend service if this is not specified in the specification
 
 ```
 "consumes": [
