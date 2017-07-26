@@ -1,4 +1,3 @@
-
 ---
 title: 'Auto Generate Adapters for Microservices and backend systems from its OpenAPI Specification'
 date: 2017-07-31
