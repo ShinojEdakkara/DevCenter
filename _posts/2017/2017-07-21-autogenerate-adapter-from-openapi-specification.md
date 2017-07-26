@@ -1,4 +1,4 @@
-```
+
 ---
 title: 'Auto Generate Adapters for Microservices and backend systems from it's OpenAPI Specification'
 date: 2017-07-31
@@ -13,7 +13,6 @@ name: Shinoj Zacharias
 additional_authors:
 - Yathendra P Neela
 ---
-```
 
 ## Overview of Adapters
 
@@ -33,15 +32,15 @@ IBM Mobile Foundation Service ships an Extension Adapter, called Microservice Co
 
     The MobileFoundation Dashboad showing information on fast tracking your app development using adapter autogeneration feature
     
-`![Navigate to Microservice Connector from Dashboard]({{site.baseurl}}/assets/blog/2017-07-21-autogenerate-adapter-from-openapi-specification/navigate-to-microservice-connector-from-dashboard.png)`
+![Navigate to Microservice Connector from Dashboard]({{site.baseurl}}/assets/blog/2017-07-21-autogenerate-adapter-from-openapi-specification/navigate-to-microservice-connector-from-dashboard.png)
 
     The Microservice Connector adapter, also known as Microservice Adapter Generator, can be downloaded from the Tools tab of Download Center
 
-`![Download Microservice Connector]({{site.baseurl}}/assets/blog/2017-07-21-autogenerate-adapter-from-openapi-specification/microservice-connector-in-downloadcenter-tools.png)`
+![Download Microservice Connector]({{site.baseurl}}/assets/blog/2017-07-21-autogenerate-adapter-from-openapi-specification/microservice-connector-in-downloadcenter-tools.png)
 
     Once deployed the Adapter will be appearing under the Extensions category in the left navigation pane of the MobileFirst Operations Console. Clicking on the Microservice Adapter Generator will open up the page where you can select the OpenAPI specification json of your microservice/backend system to generate the adapter. The generated adapter will be automatically downloaded that you can deploy on to MFP server.
 
-`![Microservice Connector]({{site.baseurl}}/assets/blog/2017-07-21-autogenerate-adapter-from-openapi-specification/microservice-adapter-generator-ui.png)`
+![Microservice Connector]({{site.baseurl}}/assets/blog/2017-07-21-autogenerate-adapter-from-openapi-specification/microservice-adapter-generator-ui.png)
 
 ### Generating a working adapter from OpenAPI specification
 The correctness of the adapter generated depends on the OpenAPI specification. There may be cases where OpenAPI specification doesn't match with that of REST API of the backend service. In this case , even if the adapter generation is successful, the call from adapter to the backend will not work because of the mismatch in  specification and the backend REST API. In the case, unless the specification is corrected, you won't get a working adapter. 
