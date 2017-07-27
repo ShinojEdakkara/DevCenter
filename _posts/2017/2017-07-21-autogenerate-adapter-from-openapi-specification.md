@@ -31,20 +31,20 @@ IBM Mobile Foundation Service provides an extension Adapter that can be used to 
 ### Microservice Connector - Extension Adapter for generating adapter from OpenAPI Specification
 IBM Mobile Foundation Service ships an Extension Adapter, called Microservice Connector, that can be download from the Download Center of MobileFirst Operations Console. This adapter needs to be downloaded and deployed on to the Mobile Foundation Server. 
 
-    The MobileFoundation Dashboard showing information on fast tracking your app development using adapter autogeneration feature
+ The MobileFoundation Dashboard showing information on fast tracking your app development using adapter autogeneration feature
     
 ![Navigate to Microservice Connector from Dashboard]({{site.baseurl}}/assets/blog/2017-07-21-autogenerate-adapter-from-openapi-specification/navigate-to-microservice-connector-from-dashboard.png)
 
-    The Microservice Connector adapter, also known as Microservice Adapter Generator, can be downloaded from the Tools tab of Download Center
+ The Microservice Connector adapter, also known as Microservice Adapter Generator, can be downloaded from the Tools tab of Download Center
 
 ![Download Microservice Connector]({{site.baseurl}}/assets/blog/2017-07-21-autogenerate-adapter-from-openapi-specification/microservice-connector-in-downloadcenter-tools.png)
 
-    Once deployed the Adapter will be appearing under the Extensions category in the left navigation pane of the MobileFirst Operations Console. Clicking on the Microservice Adapter Generator will open up the page where you can select the OpenAPI specification json of your microservice/backend system to generate the adapter. The generated adapter will be automatically downloaded that you can deploy on to MFP server.
+ Once deployed the Adapter will be appearing under the Extensions category in the left navigation pane of the MobileFirst Operations Console. Clicking on the Microservice Adapter Generator will open up the page where you can select the OpenAPI specification json of your microservice/backend system to generate the adapter. The generated adapter will be automatically downloaded that you can deploy on to MFP server.
 
 ![Microservice Connector]({{site.baseurl}}/assets/blog/2017-07-21-autogenerate-adapter-from-openapi-specification/microservice-adapter-generator-ui.png)
 
 ### Generate a working adapter from OpenAPI specification
-The correctness of the adapter generated depends on the OpenAPI specification. There may be cases where OpenAPI specification doesn't match with that of REST API of the backend service. In this case , even if the adapter generation is successful, the call from adapter to the backend will not work because of the mismatch in  specification and the backend REST API. In the case, unless the specification is corrected, you won't get a working adapter. 
+The correctness of the adapter generated depends on the OpenAPI specification. There may be cases where OpenAPI specification doesn't match with that of REST API of the backend service. In this case , even if the adapter generation is successful, the call from adapter to the backend will not work because of the mismatch in specification and the backend REST API. In the case, unless the specification is corrected, you won't get a working adapter. 
 
 #### Add Security in OpenAPI specification
 For Adapter to connect to backend systems, security definitions should be added to the OpenAPI specification. Adapter generator support **BASIC** authentication only. Authentication types such as **API Key** and **OAUTH2** is not supported currently for connecting to backend systems. For **BASIC** authentication, security definition specification needs to be added to the specification json
