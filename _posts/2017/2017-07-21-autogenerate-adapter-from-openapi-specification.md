@@ -12,7 +12,7 @@ additional_authors:
 - Yathendra P Neela
 ---
 
-## Auto-generation of Adapters - Be quick to Market Demands
+## Auto-generation of Adapters
 
 Auto-generation of adapter for back-end systems and Microservices helps in expediting the application development. This features generates MFP adapter from the OpenAPI specification of the Microservices/Back-end systems. By using this feature, Mobile Foundation user can now focus on the application logic instead of creating the Mobile Foundation adapter, which connects the application to the desired back-end service.
 
