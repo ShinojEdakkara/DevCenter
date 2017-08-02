@@ -13,6 +13,10 @@ additional_authors:
 - Yathendra P Neela
 ---
 
+## Overview
+
+Auto-generation of an adapter for Mircoservice/backend systems from its OpenAPI specification (Swagger Specification) helps in expediting application development. By using this feature, Mobile Foundation user can now focus on the application logic instead of creating the Mobile Foundation adapter, which connects the application to the desired back-end service.
+
 ## Overview of Adapters
 
 Adapters are Maven projects that contain server-side code implemented in either Java or JavaScript. Adapters are used to perform any necessary server-side logic, and to transfer and retrieve information from backend systems to client applications and cloud services. See more on [Developing Adapters](http://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters)
@@ -24,7 +28,7 @@ An adapter can be created using either Maven commands or by using the MobileFirs
 The OpenAPI Specification, originally known as the Swagger Specification, is a specification for machine-readable interface files for describing, producing, consuming, and visualizing RESTful Web services. OpenAPI specification is adopted by many companies as the industry standard for defining REST APIs. OpenAPI specifications are the key to supporting a great toolchain for developers and is used for documentation of the REST APIs. One of the great benefits of using OpenAPI Specification is that it can be used to generate the client libraries in variety of languages and use the client APIs easily to transfer and retrieve information from the backend systems and services.
 
 ## Auto-generation of Adapter from OpenAPI Specification
-IBM Mobile Foundation Service provides an extension Adapter that can be used to auto-generate adapters from OpenAPI specification. The extension Adapter takes an OpenAPI specification json and generates the adapter from the Open API specification, using the client libaries generated from the OpenAPI specification, and downloads the generated adatpers. The adapter that is generated and downloaded can then be deployed to Mobile Foundation Server and directly be used by the client applications. This takes the pain out of developers who need to spends lot of time on developing the adapters rather they can focus more on building the client applications.
+IBM Mobile Foundation Service provides an extension Adapter that can be used to auto-generate adapters from OpenAPI specification. The extension Adapter takes an OpenAPI specification json and generates the adapter from the Open API specification, using the client libaries generated from the OpenAPI specification, and downloads the generated adatpers. The adapter that is generated and downloaded can then be deployed to Mobile Foundation Server and directly be used by the client applications. This takes the pain out of developers who need to spend enormous time on developing the adapters, rather they can focus more on building the client applications.
 
 *Note: Adapter Generation Feature is available on MFP Devkits and Mobile Foundation Service only. For MFP Devkits, to use the adapter generation feature, JDK should be installed on the machine where MFP is installed and **JAVA_HOME** environment varibale needs to be set to the installed JDK path.*
 
