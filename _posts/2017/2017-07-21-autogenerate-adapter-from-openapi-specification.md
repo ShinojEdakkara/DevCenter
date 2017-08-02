@@ -16,7 +16,7 @@ additional_authors:
 
 Auto-generation of adapter for back-end systems and Microservices helps in expediting the application development. This features generates MFP adapter from the OpenAPI specification of the Microservices/Back-end systems. By using this feature, Mobile Foundation user can now focus on the application logic instead of creating the Mobile Foundation adapter, which connects the application to the desired back-end service.
 
-## Overview of Adapters
+### Overview of Adapters
 
 Adapters are Maven projects that contain server-side code implemented in either Java or JavaScript. Adapters are used to perform any necessary server-side logic, and to transfer and retrieve information from backend systems to client applications and cloud services. See more on [Developing Adapters](http://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters)
 
