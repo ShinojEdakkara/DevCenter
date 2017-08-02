@@ -13,9 +13,9 @@ additional_authors:
 - Yathendra P Neela
 ---
 
-## Overview
+## Overview - Be quick to Market Demands
 
-Auto-generation of an adapter for Mircoservice/backend systems from its OpenAPI specification (Swagger Specification) helps in expediting application development. By using this feature, Mobile Foundation user can now focus on the application logic instead of creating the Mobile Foundation adapter, which connects the application to the desired back-end service.
+Auto-generation of adapter for back-end systems and Microservices helps in expediting the application development. This features generates MFP adapter from the OpenAPI specification of the Microservices/Back-end systems. By using this feature, Mobile Foundation user can now focus on the application logic instead of creating the Mobile Foundation adapter, which connects the application to the desired back-end service.
 
 ## Overview of Adapters
 
