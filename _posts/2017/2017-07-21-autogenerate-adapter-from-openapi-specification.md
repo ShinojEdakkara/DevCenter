@@ -14,7 +14,7 @@ additional_authors:
 
 ## Auto-generation of Adapters
 
-Auto-generation of adapter for back-end systems and Microservices helps in expediting the application development. This features generates MFP adapter from the OpenAPI specification of the Microservices/Back-end systems. By using this feature, Mobile Foundation user can now focus on the application logic instead of creating the Mobile Foundation adapter, which connects the application to the desired back-end service.
+As a developer creating applications, you can significantly optimize the time you spend on backend coding by auto-generating adapters for your back-systems and Microservices. Use this feature of IBM Mobile Foundation to generate an MFP adapter from the OpenAPI specification of the Microservices/Back-end systems. By using this feature, you can now focus on the application logic instead of creating the Mobile Foundation adapter, which connects the application to the desired back-end service.
 
 ### Overview of Adapters
 
@@ -67,7 +67,7 @@ For Adapter to connect to backend systems, security definitions should be added 
 
 ```
 
-#### Add host and basepath in OpenAPI specification
+1. Add host and basepath in OpenAPI specification
 
 Make sure that the host with correct schemes is provided in the specification and also the basePath of the API
 
@@ -80,7 +80,7 @@ Make sure that the host with correct schemes is provided in the specification an
 
 ```
 
-#### Add Custom Scope for Adapter REST Endpoints
+2. Add Custom Scope for Adapter REST Endpoints
 
 If there is no scope added in the OpenAPI specification, a **DEFAULT_SCOPE** is added to all the REST endpoints. A custom scope can either be added at the global level or at the operational level, here is an example of adding scope globally
 
@@ -148,7 +148,7 @@ Here is an example of overriding the global scope at the operational level
 
 ```
 
-#### Empty Response Object
+3. Empty Response Object
 
 If there is an empty reponse object in the specification, MFP has issue with generation of the adapter, so we recommend to remove the empty reponse object in openAPI specification
 
@@ -180,7 +180,7 @@ In the above example, EmptyObject don't have any properties defined and is empty
 
 ```
 
-#### Missing Consumes and Produces Content-types in specification
+4. Missing Consumes and Produces Content-types in specification
 
 All the REST endpoints in the OpenAPI specification should have **Consumes** and **Produces** Content-types. The generated adapter can fail in calling the backend service if this is not specified or incorrectly given in the specification
 
@@ -193,6 +193,6 @@ All the REST endpoints in the OpenAPI specification should have **Consumes** and
 ]
 ```
 
-#### Mismatch in specification on request and response contents
+5. Mismatch in specification on request and response contents
 Many of the OpenAPI specification is not usually updated with the changes in the backend REST API. This can results in adapter call failures due to the content mismatch. Make sure that the request and response contents in the specification matches with what is defined by the backend REST API
 
