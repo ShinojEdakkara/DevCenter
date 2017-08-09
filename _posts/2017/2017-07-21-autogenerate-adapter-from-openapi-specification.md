@@ -149,7 +149,7 @@ The correctness of the adapter generated depends on the OpenAPI specification. T
 
     ```
 
-    4. Empty Response Object
+4. Empty Response Object
 
     If there is an empty reponse object in the specification, MFP has issue with generation of the adapter, so we recommend to remove the empty reponse object in openAPI specification
 
@@ -181,7 +181,7 @@ The correctness of the adapter generated depends on the OpenAPI specification. T
 
     ```
 
-    5. Missing Consumes and Produces Content-types in specification
+5. Missing Consumes and Produces Content-types in specification
 
     All the REST endpoints in the OpenAPI specification should have **Consumes** and **Produces** Content-types. The generated adapter can fail in calling the backend service if this is not specified or incorrectly given in the specification
 
@@ -194,7 +194,7 @@ The correctness of the adapter generated depends on the OpenAPI specification. T
     ]
     ```
 
-    6. Mismatch in specification on request and response contents
+6. Mismatch in specification on request and response contents
 
     Many of the OpenAPI specification is not usually updated with the changes in the backend REST API. This can results in adapter call failures due to the content mismatch. Make sure that the request and response contents in the specification matches with what is defined by the backend REST API
 
