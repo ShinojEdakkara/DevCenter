@@ -113,87 +113,88 @@ The correctness of the adapter generated depends on the OpenAPI specification. T
     ```
 
     Here is an example of overriding the global scope at the operational level
-
-```
-"paths": {
-    "/v1/workspaces": {
-        "parameters": [
-        {
-            "$ref": "#/parameters/VersionQueryParam"
-        }
-        ],
-        "post": {
-            "summary": "Create workspace",
-            "description": "",
-            "tags": [
-                "Workspaces"
+    
+    ```
+    "paths": {
+        "/v1/workspaces": {
+            "parameters": [
+            {
+                "$ref": "#/parameters/VersionQueryParam"
+            }
             ],
-        "security": [
-        {
-            "basicAuth": []
+            "post": {
+                "summary": "Create workspace",
+                "description": "",
+                "tags": [
+                    "Workspaces"
+                ],
+            "security": [
+            {
+                "basicAuth": []
+            },
+            {
+            "OauthSecurity": [
+                "adminauth"
+            ]
+        }
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    ...
+    ...
+
+    ```
+
+    4. Empty Response Object
+
+    If there is an empty reponse object in the specification, MFP has issue with generation of the adapter, so we recommend to remove the empty reponse object in openAPI specification
+
+    Here is an example of empty response object :
+
+    ```
+    "responses": {
+        "200": {
+            "schema": {
+            "$ref": "#/definitions/EmptyObject"
         },
-        {
-        "OauthSecurity": [
-            "adminauth"
-        ]
-    }
-],
-"consumes": [
-    "application/json"
-],
-"produces": [
-    "application/json"
-],
-...
-...
-
-```
-
-4. Empty Response Object
-
-If there is an empty reponse object in the specification, MFP has issue with generation of the adapter, so we recommend to remove the empty reponse object in openAPI specification
-
-Here is an example of empty response object :
-
-```
-"responses": {
-    "200": {
-        "schema": {
-        "$ref": "#/definitions/EmptyObject"
-    },
-    "description": "Successful request."
-},
-
-"EmptyObject": {
-    "properties": {}
-}
-
-```
-
-In the above example, EmptyObject don't have any properties defined and is empty. MFP will have issue with generation of adapter in such scenarios, in this case we recommend to remove the EmptyObject schema from the respose object, that means, the above specification should be changed to :
-
-```
-"responses": {
-    "200": {
         "description": "Successful request."
+    },
+
+    "EmptyObject": {
+        "properties": {}
     }
-}
 
-```
+    ```
 
-5. Missing Consumes and Produces Content-types in specification
+    In the above example, EmptyObject don't have any properties defined and is empty. MFP will have issue with generation of adapter in such scenarios, in this case we recommend to remove the EmptyObject schema from the respose object, that means, the above specification should be changed to :
 
-All the REST endpoints in the OpenAPI specification should have **Consumes** and **Produces** Content-types. The generated adapter can fail in calling the backend service if this is not specified or incorrectly given in the specification
+    ```
+    "responses": {
+        "200": {
+            "description": "Successful request."
+        }
+    }
 
-```
-"consumes": [
-    "application/json"
-],
-"produces": [
-    "application/json"
-]
-```
+    ```
 
-6. Mismatch in specification on request and response contents
-Many of the OpenAPI specification is not usually updated with the changes in the backend REST API. This can results in adapter call failures due to the content mismatch. Make sure that the request and response contents in the specification matches with what is defined by the backend REST API
+    5. Missing Consumes and Produces Content-types in specification
+
+    All the REST endpoints in the OpenAPI specification should have **Consumes** and **Produces** Content-types. The generated adapter can fail in calling the backend service if this is not specified or incorrectly given in the specification
+
+    ```
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ]
+    ```
+
+    6. Mismatch in specification on request and response contents
+
+    Many of the OpenAPI specification is not usually updated with the changes in the backend REST API. This can results in adapter call failures due to the content mismatch. Make sure that the request and response contents in the specification matches with what is defined by the backend REST API
 
