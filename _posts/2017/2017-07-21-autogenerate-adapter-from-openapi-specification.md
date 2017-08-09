@@ -51,56 +51,56 @@ The correctness of the adapter generated depends on the OpenAPI specification. T
 
 1. Add Security in OpenAPI specification
 
-For Adapter to connect to backend systems, security definitions should be added to the OpenAPI specification. Adapter generator support **BASIC** authentication only. Authentication types such as **API Key** and **OAUTH2** is not supported currently for connecting to backend systems. For **BASIC** authentication, security definition specification needs to be added to the specification json
+    For Adapter to connect to backend systems, security definitions should be added to the OpenAPI specification. Adapter generator support **BASIC** authentication only. Authentication types such as **API Key** and **OAUTH2** is not supported currently for connecting to backend systems. For **BASIC** authentication, security definition specification needs to be added to the specification json
 
-```
-"securityDefinitions": {
-    "basicAuth": {
-        "type": "basic",
-        "description": "HTTP Basic Authentication."
-    }   
-},
-"security": [
-{
-    "basicAuth": []
-}
-],
+    ```
+    "securityDefinitions": {
+        "basicAuth": {
+            "type": "basic",
+            "description": "HTTP Basic Authentication."
+        }   
+    },
+    "security": [
+    {
+        "basicAuth": []
+    }
+    ],
 
-```
+    ```
 
 2. Add host and basepath in OpenAPI specification
 
-Make sure that the host with correct schemes is provided in the specification and also the basePath of the API
+    Make sure that the host with correct schemes is provided in the specification and also the basePath of the API
 
-```
-"host": "gateway.watsonplatform.net",
-"schemes": [
-"https"
-],
-"basePath": "/natural-language-understanding/api"
+    ```
+    "host": "gateway.watsonplatform.net",
+    "schemes": [
+        "https"
+    ],
+    "basePath": "/natural-language-understanding/api"
 
-```
+    ```
 
 3. Add Custom Scope for Adapter REST Endpoints
 
-If there is no scope added in the OpenAPI specification, a **DEFAULT_SCOPE** is added to all the REST endpoints. A custom scope can either be added at the global level or at the operational level, here is an example of adding scope globally
+    If there is no scope added in the OpenAPI specification, a **DEFAULT_SCOPE** is added to all the REST endpoints. A custom scope can either be added at the global level or at the operational level, here is an example of adding scope globally
 
-```
-"securityDefinitions": {
-    "basicAuth": {
-        "type": "basic",
-        "description": "HTTP Basic Authentication."
-    },
-    "OauthSecurity": {
-        "type": "oauth2",
-        "flow": "implicit",
-        "scopes": {
-            "adminauth": "Admin scope",
-            "customauth": "custom scope"
+    ```
+    "securityDefinitions": {
+        "basicAuth": {
+            "type": "basic",
+            "description": "HTTP Basic Authentication."
+        },
+        "OauthSecurity": {
+            "type": "oauth2",
+            "flow": "implicit",
+            "scopes": {
+                "adminauth": "Admin scope",
+                "customauth": "custom scope"
+            }
         }
-    }
-},
-"security": [
+    },
+    "security": [
     {
         "basicAuth": []
     },
@@ -109,10 +109,10 @@ If there is no scope added in the OpenAPI specification, a **DEFAULT_SCOPE** is 
             "customauth"
         ]
     }
-]
-```
+    ]
+    ```
 
-Here is an example of overriding the global scope at the operational level
+    Here is an example of overriding the global scope at the operational level
 
 ```
 "paths": {
