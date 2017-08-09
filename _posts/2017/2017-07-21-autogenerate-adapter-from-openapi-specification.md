@@ -32,7 +32,7 @@ Adapters are Maven projects that contain server-side code implemented in either 
 IBM MobileFirst Foundation Platform provides an extension Adapter that can be used to auto-generate adapters from OpenAPI specification. The extension Adapter takes an OpenAPI specification json and generates the adapter from the Open API specification, using the client libaries generated from the OpenAPI specification, and downloads the generated adatpers. The adapter that is generated and downloaded can then be deployed to Mobile Foundation Server and directly be used by the client applications. This takes the pain out of developers who need to spend enormous time on developing the adapters, rather they can focus more on building the client applications.
 
  ```
-***Note:**  Adapter Generation Feature is available on MFP Devkits only. To use the adapter generation feature, JDK must be installed on the machine where MFP is installed and **JAVA_HOME** environment varibale needs to be set to the installed JDK path.*
+    Note: Adapter Generation Feature is available on MFP Devkits only. To use the adapter generation feature, JDK must be installed on the machine where MFP is installed and **JAVA_HOME** environment varibale needs to be set to the installed JDK path.*
  ```
 
 ### Microservice Connector - Extension Adapter for generating adapter from OpenAPI Specification
