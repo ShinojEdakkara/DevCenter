@@ -50,6 +50,7 @@ IBM MobileFirst Foundation Platform ships an Extension Adapter, called Microserv
 The correctness of the adapter generated depends on the OpenAPI specification. There may be cases where OpenAPI specification doesn't match with that of REST API of the backend service. In this case , even if the adapter generation is successful, the call from adapter to the backend will not work because of the mismatch in specification with that of REST API defined by the microservies/backend system. In the case, unless the specification is corrected, a fully functional adatper won't be generated.
 
 1. Add Security in OpenAPI specification
+
 For Adapter to connect to backend systems, security definitions should be added to the OpenAPI specification. Adapter generator support **BASIC** authentication only. Authentication types such as **API Key** and **OAUTH2** is not supported currently for connecting to backend systems. For **BASIC** authentication, security definition specification needs to be added to the specification json
 
 ```
