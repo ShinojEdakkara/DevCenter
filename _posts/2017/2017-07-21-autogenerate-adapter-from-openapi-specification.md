@@ -21,9 +21,11 @@ As a developer creating applications, you can significantly optimize the time yo
 Adapters are Maven projects that contain server-side code implemented in either Java or JavaScript. Adapters are used to perform any necessary server-side logic, and to transfer and retrieve information from backend systems to client applications and cloud services. See more on [Developing Adapters](http://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters)
 
 1. Challenges in developing Adapters
+
     An adapter can be created using either Maven commands or by using the MobileFirst CLI. The adapter code needs to be written by the developers using the IDE of their choice, such as Eclipse or IntelliJ. Developer writes the server-side code that often connects to a backend services to transfer or retrieve the information from backend systems that eventually be used by the client applications or cloud service. This means that developer needs to fully understand the backend service APIs and need to code all the logic by themseleves. Java adapters can use server-side Java APIs to perform operations that are related to MobileFirst Server, such as calling other adapters, logging to the server log, getting values of configuration properties, reporting activities to Analytics and getting the identity of the request issuer. It would be easy for developers if the an adapter code can be generated automatically for a backend system/service. See more on [Creating Adapters](http://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/creating-adapters)
 
 2. OpenAPI specification
+
     The OpenAPI Specification, originally known as the Swagger Specification, is a specification for machine-readable interface files for describing, producing, consuming, and visualizing RESTful Web services. OpenAPI specification is adopted by many companies as the industry standard for defining REST APIs. OpenAPI specifications are the key to supporting a great toolchain for developers and is used for documentation of the REST APIs. One of the great benefits of using OpenAPI Specification is that it can be used to generate the client libraries in variety of languages and use the client APIs easily to transfer and retrieve information from the backend systems and services.
 
 ## Auto-generation of Adapter from OpenAPI Specification
