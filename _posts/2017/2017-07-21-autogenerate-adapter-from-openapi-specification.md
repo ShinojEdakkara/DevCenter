@@ -49,7 +49,7 @@ IBM MobileFirst Foundation Platform ships an Extension Adapter, called Microserv
 ### How to get a functional and consumable adapter generated from OpenAPI specification
 The correctness of the adapter generated depends on the OpenAPI specification. There may be cases where OpenAPI specification doesn't match with that of REST API of the backend service. In this case , even if the adapter generation is successful, the call from adapter to the backend will not work because of the mismatch in specification with that of REST API defined by the microservies/backend system. In the case, unless the specification is corrected, a fully functional adatper won't be generated.
 
-#### Add Security in OpenAPI specification
+1. Add Security in OpenAPI specification
 For Adapter to connect to backend systems, security definitions should be added to the OpenAPI specification. Adapter generator support **BASIC** authentication only. Authentication types such as **API Key** and **OAUTH2** is not supported currently for connecting to backend systems. For **BASIC** authentication, security definition specification needs to be added to the specification json
 
 ```
@@ -67,7 +67,7 @@ For Adapter to connect to backend systems, security definitions should be added 
 
 ```
 
-1. Add host and basepath in OpenAPI specification
+2. Add host and basepath in OpenAPI specification
 
 Make sure that the host with correct schemes is provided in the specification and also the basePath of the API
 
@@ -80,7 +80,7 @@ Make sure that the host with correct schemes is provided in the specification an
 
 ```
 
-2. Add Custom Scope for Adapter REST Endpoints
+3. Add Custom Scope for Adapter REST Endpoints
 
 If there is no scope added in the OpenAPI specification, a **DEFAULT_SCOPE** is added to all the REST endpoints. A custom scope can either be added at the global level or at the operational level, here is an example of adding scope globally
 
@@ -148,7 +148,7 @@ Here is an example of overriding the global scope at the operational level
 
 ```
 
-3. Empty Response Object
+4. Empty Response Object
 
 If there is an empty reponse object in the specification, MFP has issue with generation of the adapter, so we recommend to remove the empty reponse object in openAPI specification
 
@@ -180,7 +180,7 @@ In the above example, EmptyObject don't have any properties defined and is empty
 
 ```
 
-4. Missing Consumes and Produces Content-types in specification
+5. Missing Consumes and Produces Content-types in specification
 
 All the REST endpoints in the OpenAPI specification should have **Consumes** and **Produces** Content-types. The generated adapter can fail in calling the backend service if this is not specified or incorrectly given in the specification
 
@@ -193,6 +193,6 @@ All the REST endpoints in the OpenAPI specification should have **Consumes** and
 ]
 ```
 
-5. Mismatch in specification on request and response contents
+6. Mismatch in specification on request and response contents
 Many of the OpenAPI specification is not usually updated with the changes in the backend REST API. This can results in adapter call failures due to the content mismatch. Make sure that the request and response contents in the specification matches with what is defined by the backend REST API
 
